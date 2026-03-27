@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <!-- What elements do I need? -->
+    <div class="container">
+        <div class="todo-app">
+            <!--h2 for the title-->
+            <h2>To-Do List <img src="image/icon.png"></h2>
+            <div class="row">
+                <!-- - Input field for new task -->
+                <input type="text" id="input-box" placeholder="Add your text">
+                <!-- - Add button -->
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+                <li>Task 4</li>
+                <li>Task 5</li>
+                <li>Task 6</li> 
+                <li>Task 7</li>
+                <li>Task 8</li>
+                <li>Task 9</li>
+                <li>Task 10</li>
+            </ul>
+        </div>
+    </div>
+    
+
+<!-- - Task list container (ul / div) -->
+<!-- - Each task: text + buttons (complete/delete/edit) -->
+<!-- - Filter buttons -->
+ <script src="todo.js"></script>
+</body>
+</html>

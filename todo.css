@@ -1,0 +1,132 @@
+/* How should the app look and behave visually? */
+
+/* - Layout (flexbox or grid?) */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+/* - Spacing and alignment */
+.todo-app  {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+/*ADJUSTING THE SIZE OF THE IMAGE HERE INTO THE CSS CODE*/
+/*THIS SHOULD NEVER BE DONE BY SAVING OR DOWNLOADING THE IMAGE DIFFERENTLY*/
+/*BUT JUST IN THE CSS FILE*/
+.todo-app h2 img {
+    width: 50px;
+    height: auto;
+    margin-top: auto;
+    margin-left: 10px;
+}
+/*THIS ADJUSTS THE TITLE, GIVES IT A COLOR*/
+/*GAVE IT A MARGIN FROM BOTTOM (SPACE FROM DOWN)*/
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/*with the row, i am giving a longer line around the input space*/
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+/*the space given witht the row*/
+/*i now use it to make the input space longer*/
+/*to be able to fit more text in it*/
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+/*adjusting the button based on the properties i gave earlier*/
+/*on the input and the row*/
+/*they all work as a chain, when moving or modifying one*/
+/*i most likely need to move and modify the next*/
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+/*makes the lists without the pointer*/
+/*and gives spaces between them*/
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    /*added after adding position absolute*/
+    /*in the below property*/
+    position: relative;
+}
+/*adding some unchecked tags next to the tasks*/
+/*from the image folder*/
+/*giving each of them some properties*/
+/*so they can be next to their related tasks*/
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(image/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+/*adding the line through and its color*/
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+/*adding the checked icon*/
+ul li.checked::before{
+    background-image: url(image/checked.png);
+}
+/*from the js code, an x shows up when typing in the new task*/
+/*here in the css file i make that x not to be attached to the task*/
+/*but giving it space and let it be on the right*/
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    /*am now adding a border*/
+    /*so it doesn't stay attached to the margin*/
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
